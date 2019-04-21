@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="offline.css">
+    <link rel="stylesheet" href="offline-language-english.css">
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Submit an Ad</title>
+</head>
+
+<body onload="checkUserLogin()">
+    <div class="container-fluid">
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <span>
+                            <img class="brand-logo" src="images/OLX-Logo.png">
+                        </span> Pakistan's Largest Marketplace </a>
+                </div>
+                <div class="header-right">
+                    <a id="myAcc" class="account1" href="login.html">My Account</a>
+                    <a id="reg" class="account2" href="register.html">Register</a>
+                    <a href="profile.html" id="userPara" class="account2">Welcome: </a>
+                    <a id="logout" class="account2" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-banner banner text-center">
+        <div class="container">
+            <h1>Sell or Advertise
+                <span class="segment-heading"> anything online </span> with OLX</h1>
+            <p>Welcome to the Pakistan's Largest Marketplace</p>
+            <!-- <a href="post-ad.html">Post Free Ad</a> -->
+            <a href="post-ad.html">Submit an Ad</a>
+        </div>
+    </div>
+
+    <div class="submit-ad main-grid-border">
+        <div class="container">
+            <h2 id="head-h2" class="head">Post an Ad</h2>
+            <div id="post-ad-container" class="post-ad-form">
+                <form id="ad-form">
+                    <label>Select Category
+                        <span>*</span>
+                    </label>
+                    <select id="opt-cat">
+                        <option>Select Category</option>
+                        <option>Mobiles</option>
+                        <option>Electronics and Home Appliances</option>
+                        <option>Vehicles</option>
+                        <option>Bikes</option>
+                        <option>Property for Sale</option>
+                        <option>Property for Rent</option>
+                        <option>Jobs</option>
+                        <option>Services</option>
+                        <option>Business, Industrial & Agriculture</option>
+                        <option>Furniture & Home Decor</option>
+                        <option>Animals</option>
+                        <option>Books, Sports & Hobbies</option>
+                        <option>Fashion & Beauty</option>
+                        <option>Kids</option>
+                    </select>
+                    <div class="clearfix"></div>
+                    <label>Ad Title
+                        <span>*</span>
+                    </label>
+                    <input id="ad-title" type="text" class="phone" placeholder="">
+                    <div class="clearfix"></div>
+                    <label>Ad Description
+                        <span>*</span>
+                    </label>
+                    <textarea id="ad-disc" class="mess" placeholder="Write few lines about your product"></textarea>
+                    <div class="clearfix"></div>
+                    <label>Condition
+                        <span>*</span>
+                    </label>
+                    <input id="item-condition" type="text" class="phone" placeholder="Used">
+                    <div class="clearfix"></div>
+                    <label>Price
+                        <span>*</span>
+                    </label>
+                    <input id="item-price" type="number" min="0" class="phone" placeholder="Rs.">
+                    <div class="clearfix"></div>
+                    <label>Select City
+                        <span>*</span>
+                    </label>
+                    <select id="opt-city">
+                        <optgroup label="Popular Cities">
+                            <option>Abbottabad</option>
+                            <option>Lahore</option>
+                            <option>Faisalabad</option>
+                            <option>Multan</option>
+                            <option>Gujranwala</option>
+                            <option>Peshawar</option>
+                            <option>Gujrat</option>
+                            <option>Quetta</option>
+                            <option>Hyderabad</option>
+                            <option>Rawalpindi</option>
+                            <option>Islamabad</option>
+                            <option>Sargodha</option>
+                            <option>Karachi</option>
+                            <option>Sialkot</option>
+                        </optgroup>
+                        <optgroup label="More Cities">
+                            <optgroup label="Sindh">
+                                <option>Badin</option>
+                                <option> Dadu</option>
+                                <option> Ghotki</option>
+                                <option> Hala</option>
+                                <option> Hyderabad</option>
+                                <option> Jacobabad</option>
+                                <option> Jamshoro</option>
+                                <option> Karachi</option>
+                                <option> Khairpur</option>
+                                <option> Larkana</option>
+                                <option> Mirpur Khas</option>
+                                <option> Mithi</option>
+                                <option> Nawabshah</option>
+                                <option> Ratodero</option>
+                                <option> Sanghar</option>
+                                <option> Shikarpur</option>
+                                <option> Sukkar</option>
+                                <option> Sukkur</option>
+                                <option> Tando Adam</option>
+                                <option> Thatta</option>
+                            </optgroup>
+                            <optgroup label="Punjab">
+                                <option>Ahmadpur East</option>
+                                <option>Arifwala</option>
+                                <option>Attock</option>
+                                <option>Bahawalnagar</option>
+                                <option>Bahawalpur</option>
+                                <option>Bhakkar</option>
+                                <option>Burewala</option>
+                                <option>Chakwal</option>
+                                <option>Chichawatni</option>
+                                <option>Chiniot</option>
+                                <option>Chishtian Mandi</option>
+                                <option>Daska</option>
+                                <option>Dera Ghazi Khan</option>
+                                <option>Faisalabad</option>
+                                <option>Gojra</option>
+                                <option>Gujar Khan</option>
+                                <option>Gujranwala</option>
+                                <option>Gujrat</option>
+                                <option>Hafizabad</option>
+                                <option>Hasan Abdal</option>
+                                <option>Hasilpur</option>
+                                <option>Haveli lakha</option>
+                                <option>Jaranwala</option>
+                                <option>Jhang Sadar</option>
+                                <option>Jhelum</option>
+                                <option>Kamoke</option>
+                                <option>Kasur</option>
+                                <option>Khanewal</option>
+                                <option>Khanpur</option>
+                                <option>Khushab</option>
+                                <option>Kot Addu</option>
+                                <option>Kotli</option>
+                                <option>Lahore</option>
+                                <option>Layyah</option>
+                                <option>Mailsi</option>
+                                <option>Mandi Bahauddin</option>
+                                <option>Mian Chunnu</option>
+                                <option>Mianwali</option>
+                                <option>Multan</option>
+                                <option>Muridike</option>
+                                <option>Murree</option>
+                                <option>Muzaffargarh</option>
+                                <option>Narowal</option>
+                                <option>Okara</option>
+                                <option>Pakpattan</option>
+                                <option>Pindi Bhattian</option>
+                                <option>Pirmahal</option>
+                                <option>Rahimyar Khan</option>
+                                <option>Rajanpur</option>
+                                <option>Rawalpindi</option>
+                                <option>Sadiqabad</option>
+                                <option>Safdar Abad</option>
+                                <option>Sahiwal</option>
+                                <option>Sargodha</option>
+                                <option>Shakargarh</option>
+                                <option>Sheikhüpura</option>
+                                <option>Sialkot</option>
+                                <option>Sohawa</option>
+                                <option>Talagang</option>
+                                <option>Toba Tek singh</option>
+                                <option>Vehari</option>
+                                <option>Wah</option>
+                            </optgroup>
+                            <optgroup label="Balochistan">
+                                <option>Bela</option>
+                                <option>Gwadar</option>
+                                <option>Jiwani</option>
+                                <option>Kalat</option>
+                                <option>Khuzdar</option>
+                                <option>Lasbela</option>
+                                <option>Loralai</option>
+                                <option>Ormara</option>
+                                <option>Pasni</option>
+                                <option>Quetta</option>
+                            </optgroup>
+                            <optgroup label="Khyber Pakhtunkhwa">
+                                <option>Abbottabad</option>
+                                <option>Bannu</option>
+                                <option>Batagram</option>
+                                <option>Buner</option>
+                                <option>Charsadda</option>
+                                <option>Chitral</option>
+                                <option>Darra Adam Khel</option>
+                                <option>Dera Ismail Khan</option>
+                                <option>Hangu</option>
+                                <option>Haripur</option>
+                                <option>Karak</option>
+                                <option>Kohat</option>
+                                <option>Kohistan</option>
+                                <option>Lakki Marwat</option>
+                                <option>Lower Dir</option>
+                                <option>Malakand</option>
+                                <option>Mansehra</option>
+                                <option>Mardan</option>
+                                <option>Mingaora</option>
+                                <option>Nowshera</option>
+                                <option>Peshawar</option>
+                                <option>Shangla</option>
+                                <option>Swabi</option>
+                                <option>Swat</option>
+                                <option>Tank</option>
+                                <option>Upper Dir</option>
+                            </optgroup>
+                            <optgroup label="Azad Kashmir">
+                                <option>Bagh</option>
+                                <option>Bhimber</option>
+                                <option>Mirpur</option>
+                                <option>Muzaffarabad</option>
+                                <option>Pallandri</option>
+                            </optgroup>
+                        </optgroup>
+                    </select>
+                    <div class="clearfix"></div>
+                    <div class="upload-ad-photos">
+                        <label>Photos for your ad :</label>
+                        <div id="test" class="photos-upload-view">
+                            <form id="upload" action="index.html" method="POST" enctype="multipart/form-data">
+
+                                <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+
+                                <div>
+                                    <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+                                    <!-- <div type="hidden" id="filedrag">or drop files here</div> -->
+                                </div>
+
+                                <!-- <div id="submitbutton">
+                                    <button type="submit">Upload Files</button>
+                                </div> -->
+
+                            </form>
+
+                            <div id="messages">
+                                <p>File Information</p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script src="filedrag.js"></script>
+                    </div>
+                    <div class="personal-details">
+                        <label>Your Name
+                            <span>*</span>
+                        </label>
+                        <input id="your-name" type="text" class="name" placeholder="">
+                        <div class="clearfix"></div>
+                        <label>Your Mobile No
+                            <span>*</span>
+                        </label>
+                        <input id="your-mobile" type="number" class="phone" placeholder="">
+                        <div class="clearfix"></div>
+                        <label>Your Email Address
+                            <span>*</span>
+                        </label>
+                        <input id="your-emailid" type="email" class="email" placeholder="">
+                        <div class="clearfix"></div>
+                        <p class="post-terms">By clicking
+                            <strong>post Button</strong> you accept our
+                            <a href="terms.html" target="_blank">Terms of Use </a> and
+                            <a href="privacy.html" target="_blank">Privacy Policy</a>
+                        </p>
+                        <div class="alert">Your ad has been posted</div>
+                        <input onclick="event.preventDefault(); submitForm()" type="submit" id="postBtn" value="Post">
+                        <img id="ajax-loader" class="ajaxloader" src="">
+                        <div class="clearfix"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+
+    <script src="offline.js"></script>
+    <script>
+        Offline.on("down", function () {
+            var postAdContainerEl = document.getElementById("post-ad-container");
+            var headH2El = document.getElementById("head-h2");
+            postAdContainerEl.style.display = "none";
+            headH2El.innerHTML = "You need an active internet connection to post an Ad"
+        });
+
+        Offline.on("up", function () {
+            var postAdContainerEl = document.getElementById("post-ad-container");
+            var headH2El = document.getElementById("head-h2");
+            postAdContainerEl.style.display = "block";
+            headH2El.innerHTML = "Post an Ad"
+        });
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

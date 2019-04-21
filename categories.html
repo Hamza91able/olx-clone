@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="offline.css">
+    <link rel="stylesheet" href="offline-language-english.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Categories</title>
+</head>
+
+<body onload="showAds()">
+    <div class="container-fluid">
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <span>
+                            <img class="brand-logo" src="images/OLX-Logo.png">
+                        </span> Pakistan's Largest Marketplace </a>
+                </div>
+                <div class="header-right">
+                    <a id="myAcc" class="account1" href="login.html">My Account</a>
+                    <a id="reg" class="account2" href="register.html">Register</a>
+                    <a href="profile.html" id="userPara" class="account2">Welcome: </a>
+                    <a id="logout" class="account2" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-banner banner text-center">
+        <div class="container">
+            <h1>Sell or Advertise
+                <span class="segment-heading"> anything online </span> with OLX</h1>
+            <p>Welcome to the Pakistan's Largest Marketplace</p>
+            <!-- <a href="post-ad.html">Post Free Ad</a> -->
+            <a href="post-ad.html">Submit an Ad</a>
+        </div>
+    </div>
+
+    <div class="total-ads main-grid-border">
+        <div class="container">
+            <div class="select-box">
+                <div class="select-city-for-local-ads ads-list">
+                    <label>Select your city to see local ads</label>
+                    <select id="my-city" onchange="searchCategory()">
+                        <option>All Pakistan</option>
+                        <optgroup label="Popular Cities">
+                            <option selected style="display:none;color:#eee;">All Pakistan</option>
+                            <option>Abbottabad</option>
+                            <option>Lahore</option>
+                            <option>Faisalabad</option>
+                            <option>Multan</option>
+                            <option>Gujranwala</option>
+                            <option>Peshawar</option>
+                            <option>Gujrat</option>
+                            <option>Quetta</option>
+                            <option>Hyderabad</option>
+                            <option>Rawalpindi</option>
+                            <option>Islamabad</option>
+                            <option>Sargodha</option>
+                            <option>Karachi</option>
+                            <option>Sialkot</option>
+                        </optgroup>
+                        <optgroup label="More Cities">
+                            <optgroup label="Sindh">
+                                <option>Badin</option>
+                                <option> Dadu</option>
+                                <option> Ghotki</option>
+                                <option> Hala</option>
+                                <option> Hyderabad</option>
+                                <option> Jacobabad</option>
+                                <option> Jamshoro</option>
+                                <option> Karachi</option>
+                                <option> Khairpur</option>
+                                <option> Larkana</option>
+                                <option> Mirpur Khas</option>
+                                <option> Mithi</option>
+                                <option> Nawabshah</option>
+                                <option> Ratodero</option>
+                                <option> Sanghar</option>
+                                <option> Shikarpur</option>
+                                <option> Sukkar</option>
+                                <option> Sukkur</option>
+                                <option> Tando Adam</option>
+                                <option> Thatta</option>
+                            </optgroup>
+                            <optgroup label="Punjab">
+                                <option>Ahmadpur East</option>
+                                <option>Arifwala</option>
+                                <option>Attock</option>
+                                <option>Bahawalnagar</option>
+                                <option>Bahawalpur</option>
+                                <option>Bhakkar</option>
+                                <option>Burewala</option>
+                                <option>Chakwal</option>
+                                <option>Chichawatni</option>
+                                <option>Chiniot</option>
+                                <option>Chishtian Mandi</option>
+                                <option>Daska</option>
+                                <option>Dera Ghazi Khan</option>
+                                <option>Faisalabad</option>
+                                <option>Gojra</option>
+                                <option>Gujar Khan</option>
+                                <option>Gujranwala</option>
+                                <option>Gujrat</option>
+                                <option>Hafizabad</option>
+                                <option>Hasan Abdal</option>
+                                <option>Hasilpur</option>
+                                <option>Haveli lakha</option>
+                                <option>Jaranwala</option>
+                                <option>Jhang Sadar</option>
+                                <option>Jhelum</option>
+                                <option>Kamoke</option>
+                                <option>Kasur</option>
+                                <option>Khanewal</option>
+                                <option>Khanpur</option>
+                                <option>Khushab</option>
+                                <option>Kot Addu</option>
+                                <option>Kotli</option>
+                                <option>Lahore</option>
+                                <option>Layyah</option>
+                                <option>Mailsi</option>
+                                <option>Mandi Bahauddin</option>
+                                <option>Mian Chunnu</option>
+                                <option>Mianwali</option>
+                                <option>Multan</option>
+                                <option>Muridike</option>
+                                <option>Murree</option>
+                                <option>Muzaffargarh</option>
+                                <option>Narowal</option>
+                                <option>Okara</option>
+                                <option>Pakpattan</option>
+                                <option>Pindi Bhattian</option>
+                                <option>Pirmahal</option>
+                                <option>Rahimyar Khan</option>
+                                <option>Rajanpur</option>
+                                <option>Rawalpindi</option>
+                                <option>Sadiqabad</option>
+                                <option>Safdar Abad</option>
+                                <option>Sahiwal</option>
+                                <option>Sargodha</option>
+                                <option>Shakargarh</option>
+                                <option>Sheikhüpura</option>
+                                <option>Sialkot</option>
+                                <option>Sohawa</option>
+                                <option>Talagang</option>
+                                <option>Toba Tek singh</option>
+                                <option>Vehari</option>
+                                <option>Wah</option>
+                            </optgroup>
+                            <optgroup label="Balochistan">
+                                <option>Bela</option>
+                                <option>Gwadar</option>
+                                <option>Jiwani</option>
+                                <option>Kalat</option>
+                                <option>Khuzdar</option>
+                                <option>Lasbela</option>
+                                <option>Loralai</option>
+                                <option>Ormara</option>
+                                <option>Pasni</option>
+                                <option>Quetta</option>
+                            </optgroup>
+                            <optgroup label="Khyber Pakhtunkhwa">
+                                <option>Abbottabad</option>
+                                <option>Bannu</option>
+                                <option>Batagram</option>
+                                <option>Buner</option>
+                                <option>Charsadda</option>
+                                <option>Chitral</option>
+                                <option>Darra Adam Khel</option>
+                                <option>Dera Ismail Khan</option>
+                                <option>Hangu</option>
+                                <option>Haripur</option>
+                                <option>Karak</option>
+                                <option>Kohat</option>
+                                <option>Kohistan</option>
+                                <option>Lakki Marwat</option>
+                                <option>Lower Dir</option>
+                                <option>Malakand</option>
+                                <option>Mansehra</option>
+                                <option>Mardan</option>
+                                <option>Mingaora</option>
+                                <option>Nowshera</option>
+                                <option>Peshawar</option>
+                                <option>Shangla</option>
+                                <option>Swabi</option>
+                                <option>Swat</option>
+                                <option>Tank</option>
+                                <option>Upper Dir</option>
+                            </optgroup>
+                            <optgroup label="Azad Kashmir">
+                                <option>Bagh</option>
+                                <option>Bhimber</option>
+                                <option>Mirpur</option>
+                                <option>Muzaffarabad</option>
+                                <option>Pallandri</option>
+                            </optgroup>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="browse-category ads-list">
+                    <label>Browse Categories</label>
+                    <select id="my-category" class="selectpicker show-tick" onchange="searchCategory()" data-live-search="true">
+                        <option data-tokens="All">All</option>
+                        <option data-tokens="Mobiles">Mobiles</option>
+                        <option data-tokens="Electronics & Appliances">Electronics & Appliances</option>
+                        <option data-tokens="Vehicles">Vehicles</option>
+                        <option data-tokens="Bikes">Bikes</option>
+                        <option data-tokens="Property for Sale">Property for Sale</option>
+                        <option data-tokens="Property for Rent">Property for Rent</option>
+                        <option data-tokens="Jobs">Jobs</option>
+                        <option data-tokens="Services">Services</option>
+                        <option data-tokens="Business, Industrial & Agriculture">Business, Industrial & Agriculture</option>
+                        <option data-tokens="Furniture & Home Decor">Furniture & Home Decor</option>
+                        <option data-tokens="Animals">Animals</option>
+                        <option data-tokens="Books, Sports & Hobbies">Books, Sports & Hobbies</option>
+                        <option data-tokens="Fashion & Beauty">Fashion & Beauty</option>
+                        <option data-tokens="Kids">Kids</option>
+                    </select>
+                </div>
+                <div class="search-product ads-list">
+                    <label>Search for a specific product</label>
+                    <div class="search">
+                        <div id="custom-search-input">
+                            <div class="input-group">
+                                <input id="my-input" type="text" class="form-control input-lg" onkeyup="searchCategory()" placeholder="Samsung Galaxy S6"
+                                />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-info btn-lg" type="button">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="ads-display col-md-9">
+                <div class="wrapper">
+                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                        <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+                                    <span class="text">Ads</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <img id="ajax-loader" class="ajaxloader">
+                            <!-- src="images/ajax-loader.gif" -->
+                            <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+                                <div>
+                                    <div id="container">
+                                        <div class="clearfix"></div>
+                                        <ul id="test2" class="list">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <script src="offline.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

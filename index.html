@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="offline.css">
+    <link rel="stylesheet" href="offline-language-english.css">
+    <script src="https://use.fontawesome.com/a3a5ef9e03.js"></script>
+    <link rel="manifest" href="manifest.json">
+    <title>OLX Pakistan</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <span>
+                            <img class="brand-logo" src="images/OLX-Logo.png">
+                        </span> Pakistan's Largest Marketplace </a>
+                </div>
+                <div class="header-right">
+                    <a id="myAcc" class="account1" href="login.html">My Account</a>
+                    <a id="reg" class="account2" href="register.html">Register</a>
+                    <a href="profile.html" id="userPara" class="account2">Welcome: </a>
+                    <a id="logout" class="account2" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-banner banner text-center">
+        <div class="container">
+            <h1>Sell or Advertise
+                <span class="segment-heading"> anything online </span> with OLX</h1>
+            <p>Welcome to the Pakistan's Largest Marketplace</p>
+            <!-- <a href="post-ad.html">Post Free Ad</a> -->
+            <a href="post-ad.html">Submit an Ad</a>
+        </div>
+    </div>
+
+    <div class="submit-ad main-grid-border">
+        <div class="post-ad-form">
+            <form>
+                <label>Select Location
+                </label>
+                <select id="location" class="">
+                    <option>All Pakistan</option>
+                    <optgroup label="Popular Cities">
+                        <option selected style="display:none;color:#eee;">All Pakistan</option>
+                        <option>Abbottabad</option>
+                        <option>Lahore</option>
+                        <option>Faisalabad</option>
+                        <option>Multan</option>
+                        <option>Gujranwala</option>
+                        <option>Peshawar</option>
+                        <option>Gujrat</option>
+                        <option>Quetta</option>
+                        <option>Hyderabad</option>
+                        <option>Rawalpindi</option>
+                        <option>Islamabad</option>
+                        <option>Sargodha</option>
+                        <option>Karachi</option>
+                        <option>Sialkot</option>
+                    </optgroup>
+                    <optgroup label="More Cities">
+                        <optgroup label="Sindh">
+                            <option>Badin</option>
+                            <option> Dadu</option>
+                            <option> Ghotki</option>
+                            <option> Hala</option>
+                            <option> Hyderabad</option>
+                            <option> Jacobabad</option>
+                            <option> Jamshoro</option>
+                            <option> Karachi</option>
+                            <option> Khairpur</option>
+                            <option> Larkana</option>
+                            <option> Mirpur Khas</option>
+                            <option> Mithi</option>
+                            <option> Nawabshah</option>
+                            <option> Ratodero</option>
+                            <option> Sanghar</option>
+                            <option> Shikarpur</option>
+                            <option> Sukkar</option>
+                            <option> Sukkur</option>
+                            <option> Tando Adam</option>
+                            <option> Thatta</option>
+                        </optgroup>
+                        <optgroup label="Punjab">
+                            <option>Ahmadpur East</option>
+                            <option>Arifwala</option>
+                            <option>Attock</option>
+                            <option>Bahawalnagar</option>
+                            <option>Bahawalpur</option>
+                            <option>Bhakkar</option>
+                            <option>Burewala</option>
+                            <option>Chakwal</option>
+                            <option>Chichawatni</option>
+                            <option>Chiniot</option>
+                            <option>Chishtian Mandi</option>
+                            <option>Daska</option>
+                            <option>Dera Ghazi Khan</option>
+                            <option>Faisalabad</option>
+                            <option>Gojra</option>
+                            <option>Gujar Khan</option>
+                            <option>Gujranwala</option>
+                            <option>Gujrat</option>
+                            <option>Hafizabad</option>
+                            <option>Hasan Abdal</option>
+                            <option>Hasilpur</option>
+                            <option>Haveli lakha</option>
+                            <option>Jaranwala</option>
+                            <option>Jhang Sadar</option>
+                            <option>Jhelum</option>
+                            <option>Kamoke</option>
+                            <option>Kasur</option>
+                            <option>Khanewal</option>
+                            <option>Khanpur</option>
+                            <option>Khushab</option>
+                            <option>Kot Addu</option>
+                            <option>Kotli</option>
+                            <option>Lahore</option>
+                            <option>Layyah</option>
+                            <option>Mailsi</option>
+                            <option>Mandi Bahauddin</option>
+                            <option>Mian Chunnu</option>
+                            <option>Mianwali</option>
+                            <option>Multan</option>
+                            <option>Muridike</option>
+                            <option>Murree</option>
+                            <option>Muzaffargarh</option>
+                            <option>Narowal</option>
+                            <option>Okara</option>
+                            <option>Pakpattan</option>
+                            <option>Pindi Bhattian</option>
+                            <option>Pirmahal</option>
+                            <option>Rahimyar Khan</option>
+                            <option>Rajanpur</option>
+                            <option>Rawalpindi</option>
+                            <option>Sadiqabad</option>
+                            <option>Safdar Abad</option>
+                            <option>Sahiwal</option>
+                            <option>Sargodha</option>
+                            <option>Shakargarh</option>
+                            <option>Sheikhüpura</option>
+                            <option>Sialkot</option>
+                            <option>Sohawa</option>
+                            <option>Talagang</option>
+                            <option>Toba Tek singh</option>
+                            <option>Vehari</option>
+                            <option>Wah</option>
+                        </optgroup>
+                        <optgroup label="Balochistan">
+                            <option>Bela</option>
+                            <option>Gwadar</option>
+                            <option>Jiwani</option>
+                            <option>Kalat</option>
+                            <option>Khuzdar</option>
+                            <option>Lasbela</option>
+                            <option>Loralai</option>
+                            <option>Ormara</option>
+                            <option>Pasni</option>
+                            <option>Quetta</option>
+                        </optgroup>
+                        <optgroup label="Khyber Pakhtunkhwa">
+                            <option>Abbottabad</option>
+                            <option>Bannu</option>
+                            <option>Batagram</option>
+                            <option>Buner</option>
+                            <option>Charsadda</option>
+                            <option>Chitral</option>
+                            <option>Darra Adam Khel</option>
+                            <option>Dera Ismail Khan</option>
+                            <option>Hangu</option>
+                            <option>Haripur</option>
+                            <option>Karak</option>
+                            <option>Kohat</option>
+                            <option>Kohistan</option>
+                            <option>Lakki Marwat</option>
+                            <option>Lower Dir</option>
+                            <option>Malakand</option>
+                            <option>Mansehra</option>
+                            <option>Mardan</option>
+                            <option>Mingaora</option>
+                            <option>Nowshera</option>
+                            <option>Peshawar</option>
+                            <option>Shangla</option>
+                            <option>Swabi</option>
+                            <option>Swat</option>
+                            <option>Tank</option>
+                            <option>Upper Dir</option>
+                        </optgroup>
+                        <optgroup label="Azad Kashmir">
+                            <option>Bagh</option>
+                            <option>Bhimber</option>
+                            <option>Mirpur</option>
+                            <option>Muzaffarabad</option>
+                            <option>Pallandri</option>
+                        </optgroup>
+                    </optgroup>
+                </select>
+                <br>
+                <label id="searchLbl">Search</label>
+                <input id="searchBox" type="text" />
+                <input onclick="return gotoCategories()" id="searchBtn" type="submit" value="Search">
+            </form>
+            <div class="clearfix"></div>
+
+            <div class="categories">
+                <div class="container">
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Mobiles#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-mobile"></i>
+                                    </div>
+                                    <h4 class="clrchg">Mobiles</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Electronics & Appliances#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-laptop"></i>
+                                    </div>
+                                    <h4 class="clrchg"> Electronics & Appliances</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Vehicles#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-car"></i>
+                                    </div>
+                                    <h4 class="clrchg">Vehicles</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Bikes#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-motorcycle"></i>
+                                    </div>
+                                    <h4 class="clrchg">Bikes</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Property for Sale#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <h4 class="clrchg">Property for Sale</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Property for Rent#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <h4 class="clrchg">Property for Rent</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Jobs#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-book"></i>
+                                    </div>
+                                    <h4 class="clrchg">Jobs</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Services#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-user-md"></i>
+                                    </div>
+                                    <h4 class="clrchg">Services</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Business, Industrial & Agriculture#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-area-chart"></i>
+                                    </div>
+                                    <h4 class="clrchg">Business, Industrial & Agriculture</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Furniture & Home Decor#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-bed"></i>
+                                    </div>
+                                    <h4 class="clrchg">Furniture & Home Decor</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Animals#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-qq"></i>
+                                    </div>
+                                    <h4 class="clrchg">Animals</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Books, Sports & Hobbies#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-futbol-o"></i>
+                                    </div>
+                                    <h4 class="clrchg">Books, Sports & Hobbies</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Fashion & Beauty#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-diamond"></i>
+                                    </div>
+                                    <h4 class="clrchg">Fashion & Beauty</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2 focus-grid">
+                        <a href="categories.html?Kids#All%20Pakistan&">
+                            <div class="focus-border">
+                                <div class="focus-layout">
+                                    <div class="focus-image">
+                                        <i class="fa fa-puzzle-piece"></i>
+                                    </div>
+                                    <h4 class="clrchg">Kids</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="offline.js"></script>
+    <script src="offline.js"></script>
+    <script>
+        Offline.on("down", function () {
+            var chatBtnEl = document.getElementById("searchBtn");
+            var searchBoxEl = document.getElementById("searchBox");
+            searchBoxEl.style.display = "none";
+            chatBtnEl.style.display = "none";
+            var searchLbl = document.getElementById("searchLbl");
+            searchLbl.style.display = "none";
+        });
+
+        Offline.on("up", function () {
+            var chatBtnEl = document.getElementById("searchBtn");
+            chatBtnEl.style.display = "block";
+            var searchBoxEl = document.getElementById("searchBox");
+            searchBoxEl.style.display = "block";
+            var searchLbl = document.getElementById("searchLbl");
+            searchLbl.style.display = "block";
+        });
+    </script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+{
+  "articles": [
+    {
+      "title": "Can't show this page.",
+      "url": "",
+      "urlToImage": "images/fallback.png",
+      "description": "Try loading the page again when you're online."
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="offline.css">
+    <link rel="stylesheet" href="offline-language-english.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <title>Register</title>
+</head>
+
+<body onload="checkUser()">
+    <div class="container-fluid">
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <span>
+                            <img class="brand-logo" src="images/OLX-Logo.png">
+                        </span> Pakistan's Largest Marketplace </a>
+                </div>
+                <div class="header-right">
+                    <a id="myAcc" class="account1" href="login.html">My Account</a>
+                    <a id="reg" class="account2" href="register.html">Register</a>
+                    <a href="profile.html" id="userPara" class="account2">Welcome: </a>
+                    <a id="logout" class="account2" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="alert-offline" class="alert alert-warning offline none">
+        You can only sign in when you have an active internet connection.
+    </div>
+
+    <section>
+        <div class="sign-in-wrapper">
+            <div class="graphs">
+                <div class="sign-up">
+                    <h1 id="h1-tag">Create an account</h1>
+                    <div id="register-div">
+                        <p id="creating" class="creating">Please fill out the required Information.</p>
+                        <h2>Personal Information</h2>
+                        <div class="sign-u">
+                            <div class="sign-up1">
+                                <h4>Email Address* :</h4>
+                            </div>
+                            <div class="sign-up2">
+                                <form>
+                                    <input id="emailReg" type="text" placeholder=" " required=" " />
+                                </form>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="sign-u">
+                            <div class="sign-up1">
+                                <h4>User Name* :</h4>
+                            </div>
+                            <div class="sign-up2">
+                                <form>
+                                    <input id="userNameReg" type="text" placeholder=" " required=" " />
+                                </form>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="sign-u">
+                            <div class="sign-up1">
+                                <h4>Password* :</h4>
+                            </div>
+                            <div class="sign-up2">
+                                <form>
+                                    <input id="passwordReg" type="password" placeholder=" " required=" " />
+                                </form>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="sign-u">
+                            <div class="sign-up1">
+                                <h4>Confirm Password* :</h4>
+                            </div>
+                            <div class="sign-up2">
+                                <form>
+                                    <input id="confirmPasswordReg" type="password" placeholder=" " required=" " />
+                                </form>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="sub_home">
+                            <div class="sub_home_left">
+                                <input id="register-brn" onclick="return register()" type="submit" value="Create">
+                                <img id="ajax-loader" class="ajaxloader" src="">
+                            </div>
+                            <div class="sub_home_right">
+                                <p>Go Back to
+                                    <a href="index.html">Home</a>
+                                </p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+
+
+    <script src="offline.js"></script>
+    <script>
+        Offline.on("down", function () {
+            var h1TagEl = document.getElementById("h1-tag");
+            var register = document.getElementById("register-div");
+            register.style.display = "none"
+            h1TagEl.innerHTML = "You can only sign up when you have an active internet connection."
+        });
+
+        Offline.on("up", function () {
+            var h1TagEl = document.getElementById("h1-tag");
+            var register = document.getElementById("register-div");
+            register.style.display = "block"
+            h1TagEl.innerHTML = "Create an account"
+        });
+
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

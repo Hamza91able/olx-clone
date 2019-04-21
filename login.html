@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="offline.css">
+    <link rel="stylesheet" href="offline-language-english.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Login</title>
+</head>
+
+<body onload="checkUser()">
+    <div class="container-fluid">
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <span>
+                            <img class="brand-logo" src="images/OLX-Logo.png">
+                        </span> Pakistan's Largest Marketplace </a>
+                </div>
+                <div class="header-right">
+                    <a id="myAcc" class="account1" href="login.html">My Account</a>
+                    <a id="reg" class="account2" href="register.html">Register</a>
+                    <a href="profile.html" id="userPara" class="account2">Welcome: </a>
+                    <a id="logout" class="account2" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="sign-in-wrapper">
+            <div class="graphs">
+                <div class="sign-in-form">
+                    <div class="sign-in-form-top">
+                        <h1>Log in</h1>
+                    </div>
+                    <div id="sign-in" class="signin">
+                        <form>
+                            <div class="log-input">
+                                <div class="log-input-left">
+                                    <input id="email" type="text" class="user" value="Your Email" onfocus="if(this.value == 'Your Email') {this.value = '';}"
+                                        onblur="if (this.value == '') {this.value = 'Your Email';}" />
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="log-input">
+                                <div class="log-input-left">
+                                    <input id="password" type="password" class="lock" value="Your Password" onfocus="if(this.value == 'Your Password') {this.value = '';}"
+                                        onblur="if (this.value == '') {this.value = 'Your Password';}" />
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+
+                            <input id="login-btn" onclick="return login()" type="submit" value="Log in">
+                        </form>
+                        <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
+                            <div class="mdl-snackbar__text"></div>
+                            <button class="mdl-snackbar__action" type="button"></button>
+                        </div>
+                        <div id="alert-offline" class="alert alert-warning offline none">
+                            You can only sign in when you have an active internet connection.
+                        </div>
+                    </div>
+                    <div class="new_people">
+                        <h2>For New People</h2>
+                        <p>Register now to become a member of Pakistan's largest marketplace</p>
+                        <a href="register.html">Register Now!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="offline.js"></script>
+    <script>
+        Offline.on("down", function () {
+            console.log("START");
+            console.log("START21");
+            var emailEl = document.getElementById("email");
+            var passwordEl = document.getElementById("password");
+            var loginBtnEl = document.getElementById("login-btn");
+            emailEl.style.display = "none";
+            passwordEl.style.display = "none";
+            loginBtnEl.style.display = "none";
+            var alertOfflineEl = document.getElementById("alert-offline");
+            alertOfflineEl.style.display = "block";
+        });
+
+        Offline.on("up", function () {
+            var emailEl = document.getElementById("email");
+            var passwordEl = document.getElementById("password");
+            var loginBtnEl = document.getElementById("login-btn");
+            loginBtnEl.style.display = "none";
+            emailEl.style.display = "block";
+            passwordEl.style.display = "block";
+            var alertOfflineEl = document.getElementById("alert-offline");
+            alertOfflineEl.style = "none";
+        });
+    </script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
